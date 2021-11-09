@@ -148,23 +148,27 @@ makeBroccoli();
 // Bonus 2 - Promise all
 async function makeBrussels() {
   try {
-    let step0 = await obtainInstruction("brusselsSprouts", 0)
-    let step1 = await obtainInstruction("brusselsSprouts", 1)
-    let step2 = await obtainInstruction("brusselsSprouts", 2)
-    let step3 = await obtainInstruction("brusselsSprouts", 3)
-    let step4 = await obtainInstruction("brusselsSprouts", 4)
-    let step5 = await obtainInstruction("brusselsSprouts", 5)
-    let step6 = await obtainInstruction("brusselsSprouts", 6)
-    let step7 = await obtainInstruction("brusselsSprouts", 7)
-    Promise.all([step0, step1, step2, step3, step4, step5, step6, step7])
-    .then(value => {
-      value.forEach(element => {
-        document.querySelector("#brusselsSprouts").innerHTML += `<li>${element}</li>`;
-      });
-      document.querySelector("#brusselsSprouts").innerHTML += `<li>Brussels sprouts are ready!</li>`;
-    })
+    let step0 = await obtainInstruction("brusselsSprouts", 0);
+    let step1 = await obtainInstruction("brusselsSprouts", 1);
+    let step2 = await obtainInstruction("brusselsSprouts", 2);
+    let step3 = await obtainInstruction("brusselsSprouts", 3);
+    let step4 = await obtainInstruction("brusselsSprouts", 4);
+    let step5 = await obtainInstruction("brusselsSprouts", 5);
+    let step6 = await obtainInstruction("brusselsSprouts", 6);
+    let step7 = await obtainInstruction("brusselsSprouts", 7);
+    Promise.all([step0, step1, step2, step3, step4, step5, step6, step7]).then(
+      (value) => {
+        value.forEach((element) => {
+          document.querySelector(
+            "#brusselsSprouts"
+          ).innerHTML += `<li>${element}</li>`;
+        });
+        document.querySelector(
+          "#brusselsSprouts"
+        ).innerHTML += `<li>Brussels sprouts are ready!</li>`;
+      }
+    );
     document.querySelector("#brusselsSproutsImg").removeAttribute("hidden");
-  } catch (error) {
-  }
+  } catch (error) {}
 }
-makeBrussels() 
+makeBrussels();
